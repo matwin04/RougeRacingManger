@@ -1,4 +1,5 @@
 import socket
+import os
 from appJar import gui
 
 app = gui()
@@ -20,12 +21,12 @@ def restart(btn):
 
 def sleep(btn):
     # Put the computer to sleep
-    pass
+    os.system("rundll32.exe powrprof.dll,SetSuspendState Sleep")
+
 
 def shutdown(btn):
     # Shut down the computer
     pass
-
 # Create the GUI
 app.addButtons(['Restart', 'Sleep', 'Shutdown'], [restart, sleep, shutdown])
 app.go()
